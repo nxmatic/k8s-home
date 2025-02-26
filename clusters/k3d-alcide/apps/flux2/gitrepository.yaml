@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  url: ssh://git@giyhub.com/nxmatic/k8s-home.git
+  ref:
+    branch: main

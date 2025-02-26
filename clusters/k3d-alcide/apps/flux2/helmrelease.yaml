@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: flux2
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: flux2
+      sourceRef:
+        kind: GitRepository
+        name: flux-system  # Name of your GitRepository resource
+      interval: 5m
+  values:
+    controller:
+      logLevel: info

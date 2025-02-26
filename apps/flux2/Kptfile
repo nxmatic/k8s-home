@@ -1,0 +1,18 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: flux2
+upstream:
+  type: git
+  git:
+    repo: https://github.com/fluxcd-community/helm-charts
+    directory: /charts/flux2
+    ref: main
+  updateStrategy: force-delete-replace
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/fluxcd-community/helm-charts
+    directory: /charts/flux2
+    ref: main
+    commit: b47dabdb8fea6901477b5c11508c8873851de27c
